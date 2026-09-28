@@ -1,49 +1,25 @@
-function playAudio(sound) {
-  return new Audio(`./sounds/${sound}.wav`).play();
-}
-
+const audioCache = {};
 const playButtons = document.querySelectorAll('button');
 
+function playAudio(sound) {
+  const audio = audioCache[sound];
+  audio.currentTime = 0;
+  audio.play();
+}
+
+// cache audio objects to prevent creating them on repeated keypress
 playButtons.forEach((button) => {
+  const sound = button.dataset.sound;
+  audioCache[sound] = new Audio(`./sounds/${sound}.wav`);
+
   button.addEventListener('click', (e) => {
-    playAudio(e.target.dataset.id);
+    playAudio(sound);
   });
 });
 
 window.addEventListener('keydown', (e) => {
-  if (e.code === 'KeyA') {
-    playAudio('boom');
-  }
-
-  if (e.code === 'KeyS') {
-    playAudio('clap');
-  }
-
-  if (e.code === 'KeyD') {
-    playAudio('hihat');
-  }
-
-  if (e.code === 'KeyF') {
-    playAudio('kick');
-  }
-
-  if (e.code === 'KeyG') {
-    playAudio('openhat');
-  }
-
-  if (e.code === 'KeyH') {
-    playAudio('ride');
-  }
-
-  if (e.code === 'KeyJ') {
-    playAudio('snare');
-  }
-
-  if (e.code === 'KeyK') {
-    playAudio('tink');
-  }
-
-  if (e.code === 'KeyL') {
-    playAudio('tom');
+  const button = document.querySelector(`button[data-key='${e.code}']`);
+  if (button) {
+    playAudio(button.dataset.sound);
   }
 });
