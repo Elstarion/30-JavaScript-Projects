@@ -3,20 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JS Drum Kit</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="buttons">
-      <button data-key="KeyA" data-sound="boom">BOOM</button>
-      <button data-key="KeyS" data-sound="clap">CLAP</button>
-      <button data-key="KeyD" data-sound="hihat">HIHAT</button>
-      <button data-key="KeyF" data-sound="kick">KICK</button>
-      <button data-key="KeyG" data-sound="openhat">OPENHAT</button>
-      <button data-key="KeyH" data-sound="ride">RIDE</button>
-      <button data-key="KeyJ" data-sound="snare">SNARE</button>
-      <button data-key="KeyK" data-sound="tink">TINK</button>
-      <button data-key="KeyL" data-sound="tom">TOM</button>
+    <div class="keys">
+      <div data-key="KeyA" data-sound="clap" class="key">
+        <kbd>A</kbd>
+        <span class="sound">CLAP</span>
+      </div>
+      <div data-key="KeyS" data-sound="hihat" class="key">
+        <kbd>S</kbd>
+        <span class="sound">HIHAT</span>
+      </div>
+      <div data-key="KeyD" data-sound="kick" class="key">
+        <kbd>D</kbd>
+        <span class="sound">KICK</span>
+      </div>
+      <div data-key="KeyF" data-sound="openhat" class="key">
+        <kbd>F</kbd>
+        <span class="sound">OPENHAT</span>
+      </div>
+      <div data-key="KeyG" data-sound="boom" class="key">
+        <kbd>G</kbd>
+        <span class="sound">BOOM</span>
+      </div>
+      <div data-key="KeyH" data-sound="ride" class="key">
+        <kbd>H</kbd>
+        <span class="sound">RIDE</span>
+      </div>
+      <div data-key="KeyJ" data-sound="snare" class="key">
+        <kbd>J</kbd>
+        <span class="sound">SNARE</span>
+      </div>
+      <div data-key="KeyK" data-sound="tom" class="key">
+        <kbd>K</kbd>
+        <span class="sound">TOM</span>
+      </div>
+      <div data-key="KeyL" data-sound="tink" class="key">
+        <kbd>L</kbd>
+        <span class="sound">TINK</span>
+      </div>
     </div>
 
     <script src="script.js"></script>
